@@ -2,7 +2,7 @@
 # 使用SSL没成功
 
 $EmailCreID = 'shilei@ttc-cn.com'
-$EmailCrepwd = 'Sl@0611'
+$EmailCrepwd = '******'
 
 $SecurePassword = $EmailCrepwd | ConvertTo-SecureString -AsPlainText -Force
 
