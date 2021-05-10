@@ -27,14 +27,13 @@
 # Read-Host -AsSecureString | ConvertFrom-SecureString | Out-File -FilePath shilei@ttc-cn.com.securestring
 
 # 通过文件获取密码
-$EncryptedPasswordFile = '.\SendMail\shilei@ttc-cn.com.securestring'
+$EncryptedPasswordFile = 'shilei@ttc-cn.com.securestring'
 $SecureStringPassword = Get-Content -Path $EncryptedPasswordFile | ConvertTo-SecureString
 
 # Send-MailMessage 模块
 $EmailFrom = 'TTL-Lei.S <shilei@ttc-cn.com>'
 $EmailTo = 'SL.126 <shilei66491@126.com>'
 $EmailCreID = 'shilei@ttc-cn.com'
-
 $EmailCredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $EmailCreID,$SecureStringPassword
 $SMTP_SVR = 'pop.exmail.qq.com'
 $SMTP_Port = 995
